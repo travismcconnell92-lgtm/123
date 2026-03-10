@@ -57,9 +57,13 @@ font-size:42px;
 max-width:900px;
 margin:auto;
 margin-bottom:20px;
-white-space:pre;
-overflow:hidden;
-border-right:2px solid white; /* typewriter cursor */
+}
+
+.hero p{
+font-size:18px;
+max-width:650px;
+margin:auto;
+margin-bottom:30px;
 }
 
 .cta{
@@ -70,7 +74,7 @@ border-radius:6px;
 text-decoration:none;
 font-weight:600;
 display:inline-block;
-animation: pulse 4s ease-in-out infinite; /* one pulse every 4s */
+animation: pulse 4s ease-in-out infinite; /* pulse once every 4s */
 }
 
 /* Pulse button animation */
@@ -219,7 +223,7 @@ line-height:1.6;
 
 <section class="hero">
 
-<h1 id="hero-title"></h1>
+<h1>Florida Construction Lien Prepared by a Construction Attorney</h1>
 
 <p>
 Ready Legal helps contractors and suppliers secure payment by preparing Florida construction liens that comply with Florida law.
@@ -413,22 +417,6 @@ You should not rely upon any information contained on this page as a substitute 
 By submitting information through this page, you acknowledge that the firm may decline representation for any reason and that no legal services will be performed until a formal engagement agreement has been entered. The firm disclaims all liability for any reliance on the information provided prior to the execution of an engagement agreement. Clients are solely responsible for verifying deadlines, statutes, and all requirements applicable to their lien claims.
 
 </footer>
-
-<script>
-// TYPEWRITER EFFECT
-const text = "Florida Construction Lien Prepared by a Construction Attorney";
-const heroTitle = document.getElementById("hero-title");
-let i = 0;
-
-function typeWriter(){
-    if(i < text.length){
-        heroTitle.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-    }
-}
-window.onload = typeWriter;
-</script>
 
 </body>
 </html>
