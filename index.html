@@ -101,10 +101,16 @@ padding:35px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,.08);
 text-align:center;
-min-height:230px; /* consistent box height */
+min-height:230px;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
+transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.box:hover{
+background:#f0f4fa; /* subtle light blue */
+transform: translateY(-4px);
 }
 
 .box h3{
@@ -126,6 +132,10 @@ color:white;
 
 .blue .box{
 background:#143a63;
+}
+
+.blue .box:hover{
+background:#1a4072; /* slightly lighter blue on hover */
 }
 
 /* FORM */
@@ -280,13 +290,13 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 <div class="box">
 <div class="icon">1️⃣</div>
 <h3>Submit Project Information</h3>
-<p>Provide property address, owner information, and work dates.</p>
+<p>Provide the property address, owner information, and work dates for preparation.</p>
 </div>
 
 <div class="box">
 <div class="icon">2️⃣</div>
-<h3>Attorney Prepares Lien</h3>
-<p>Your construction lien is drafted based on the information you provide.</p>
+<h3>Attorney Prepares the Lien</h3>
+<p>Your construction lien is drafted based on the information provided.</p>
 </div>
 
 <div class="box">
