@@ -21,7 +21,7 @@ line-height:1.7;
 
 header{
 background:#0b2a4a;
-padding:20px;
+padding:22px;
 text-align:center;
 }
 
@@ -32,15 +32,18 @@ padding:14px 28px;
 border-radius:6px;
 text-decoration:none;
 font-weight:600;
-display:inline-block;
 }
 
 /* HERO */
 
 .hero{
-background:#0b2a4a;
+background:
+linear-gradient(rgba(11,42,74,.85),rgba(11,42,74,.9)),
+url("https://beachportag.wordpress.com/wp-content/uploads/2024/12/professional-picture.png");
+background-size:cover;
+background-position:center;
 color:white;
-padding:100px 20px;
+padding:120px 20px;
 text-align:center;
 }
 
@@ -53,7 +56,7 @@ margin-bottom:20px;
 
 .hero p{
 font-size:18px;
-max-width:700px;
+max-width:650px;
 margin:auto;
 }
 
@@ -62,28 +65,20 @@ margin:auto;
 .section{
 max-width:1100px;
 margin:auto;
-padding:70px 25px;
+padding:80px 30px;
 }
 
 .section h2{
 font-size:34px;
-margin-bottom:20px;
+margin-bottom:30px;
 text-align:center;
-}
-
-/* IMAGE */
-
-.feature-image{
-width:100%;
-border-radius:8px;
-margin-top:35px;
 }
 
 /* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 margin-top:40px;
 }
@@ -92,10 +87,15 @@ margin-top:40px;
 
 .box{
 background:white;
-padding:30px;
-border-radius:8px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
+padding:35px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
 text-align:center;
+}
+
+.icon{
+font-size:32px;
+margin-bottom:10px;
 }
 
 /* BLUE SECTION */
@@ -107,7 +107,6 @@ color:white;
 
 .blue .box{
 background:#143a63;
-color:white;
 }
 
 /* FORM */
@@ -117,8 +116,8 @@ max-width:700px;
 margin:auto;
 background:white;
 padding:40px;
-border-radius:8px;
-box-shadow:0 8px 25px rgba(0,0,0,.15);
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 form{
@@ -129,7 +128,7 @@ input, select, textarea{
 width:100%;
 padding:12px;
 margin-top:6px;
-margin-bottom:16px;
+margin-bottom:18px;
 border:1px solid #ddd;
 border-radius:6px;
 font-size:14px;
@@ -164,11 +163,8 @@ color:#666;
 <body>
 
 <header>
-
 <a href="#form" class="cta">Start My Lien</a>
-
 </header>
-
 
 <section class="hero">
 
@@ -183,36 +179,30 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 
 <section class="section">
 
-<h2>Construction Lien Preparation for Florida Contractors</h2>
-
-<img class="feature-image"
-src="https://beachportag.wordpress.com/wp-content/uploads/2023/06/josh-olalde-x1p1_ednnok-unsplash.jpg">
-
-</section>
-
-
-<section class="section">
-
-<h2>Why Contractors Choose Attorney-Prepared Liens</h2>
+<h2>Why Contractors Use Attorney-Prepared Liens</h2>
 
 <div class="grid">
 
 <div class="box">
+<div class="icon">✔</div>
 <h3>Avoid Costly Errors</h3>
-<p>Incorrect legal descriptions, owner names, or statutory language can invalidate a construction lien.</p>
+<p>Incorrect legal descriptions or owner information can invalidate a construction lien.</p>
 </div>
 
 <div class="box">
+<div class="icon">✔</div>
 <h3>Comply With Florida Law</h3>
-<p>Construction liens must comply with strict statutory requirements under Florida law.</p>
+<p>Construction liens must meet strict statutory requirements.</p>
 </div>
 
 <div class="box">
-<h3>Secure Payment</h3>
+<div class="icon">✔</div>
+<h3>Protect Your Payment Rights</h3>
 <p>A properly prepared lien protects contractors and suppliers when payment disputes arise.</p>
 </div>
 
 <div class="box">
+<div class="icon">✔</div>
 <h3>Flat Fee Service</h3>
 <p>Construction lien preparation is available for a predictable flat fee.</p>
 </div>
@@ -229,23 +219,27 @@ src="https://beachportag.wordpress.com/wp-content/uploads/2023/06/josh-olalde-x1
 <div class="grid">
 
 <div class="box">
-Owner refuses to pay the final invoice
+<div class="icon">💰</div>
+<h3>Unpaid Invoice</h3>
+<p>The property owner refuses to pay the final invoice.</p>
 </div>
 
 <div class="box">
-General contractor withholding payment
+<div class="icon">⚖</div>
+<h3>Payment Dispute</h3>
+<p>A dispute arises over the amount owed for completed work.</p>
 </div>
 
 <div class="box">
-Disputes over change orders
+<div class="icon">📄</div>
+<h3>Change Order Conflict</h3>
+<p>The owner disputes the cost of change orders or additional work.</p>
 </div>
 
 <div class="box">
-Customer stops responding to payment requests
-</div>
-
-<div class="box">
-Project terminated before final payment
+<div class="icon">⏳</div>
+<h3>Payment Delays</h3>
+<p>The owner repeatedly delays payment despite multiple requests.</p>
 </div>
 
 </div>
@@ -257,41 +251,33 @@ Project terminated before final payment
 
 <h2>How the Process Works</h2>
 
-<img class="feature-image"
-src="https://beachportag.wordpress.com/wp-content/uploads/2023/06/c-dustin-91aqt9p4mo8-unsplash.jpg">
-
 <div class="grid">
 
 <div class="box">
-<h3>1. Submit Project Information</h3>
-<p>Provide the project address, owner information, and work dates.</p>
+<div class="icon">1️⃣</div>
+<h3>Submit Project Information</h3>
+<p>Provide the property address, owner information, and work dates.</p>
 </div>
 
 <div class="box">
-<h3>2. Attorney Prepares the Lien</h3>
+<div class="icon">2️⃣</div>
+<h3>Attorney Prepares the Lien</h3>
 <p>Your construction lien is prepared based on the information you provide.</p>
 </div>
 
 <div class="box">
-<h3>3. Record and Serve the Lien</h3>
-<p>You receive instructions for recording the lien and serving the property owner.</p>
+<div class="icon">3️⃣</div>
+<h3>Record the Lien</h3>
+<p>You receive instructions for recording the lien with the county clerk.</p>
+</div>
+
+<div class="box">
+<div class="icon">4️⃣</div>
+<h3>Serve the Owner</h3>
+<p>You receive instructions for properly serving the lien on the property owner.</p>
 </div>
 
 </div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Prepared by Ready Legal</h2>
-
-<img class="feature-image"
-src="https://beachportag.wordpress.com/wp-content/uploads/2024/12/professional-picture.png">
-
-<p style="text-align:center; max-width:700px; margin:30px auto;">
-Ready Legal is a Florida law firm serving contractors, subcontractors, suppliers, and construction professionals. The firm assists clients with payment disputes, construction liens, and lien enforcement matters.
-</p>
 
 </section>
 
@@ -305,19 +291,16 @@ Ready Legal is a Florida law firm serving contractors, subcontractors, suppliers
 <form>
 
 <label>Name</label>
-<input type="text">
+<input type="text" required>
 
 <label>Email</label>
-<input type="email">
-
-<label>Phone</label>
-<input type="tel">
+<input type="email" required>
 
 <label>Company</label>
 <input type="text">
 
 <label>Project Address</label>
-<input type="text">
+<input type="text" required>
 
 <label>County</label>
 <input type="text">
@@ -325,7 +308,7 @@ Ready Legal is a Florida law firm serving contractors, subcontractors, suppliers
 <label>Property Owner Name</label>
 <input type="text">
 
-<label>Contract Amount</label>
+<label>Value of Work Provided</label>
 <input type="number">
 
 <label>Amount Unpaid</label>
