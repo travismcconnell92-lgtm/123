@@ -29,7 +29,7 @@ header a{
 color:white;
 text-decoration:none;
 font-weight:700;
-font-size:40px; /* doubled size */
+font-size:40px;
 letter-spacing:1px;
 }
 
@@ -37,13 +37,14 @@ letter-spacing:1px;
 
 .hero{
 background:
-linear-gradient(rgba(11,42,74,.88),rgba(11,42,74,.92)),
+linear-gradient(rgba(11,42,74,0.63), rgba(11,42,74,0.67)), /* 25% more transparent */
 url("https://beachportag.wordpress.com/wp-content/uploads/2024/12/professional-picture.png");
 background-size:cover;
-background-position:center;
+background-position:top center; /* shift focus to top */
 color:white;
 padding:120px 20px;
 text-align:center;
+position:relative;
 }
 
 .hero h1{
@@ -51,13 +52,9 @@ font-size:42px;
 max-width:900px;
 margin:auto;
 margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-max-width:650px;
-margin:auto;
-margin-bottom:30px;
+white-space:pre;
+overflow:hidden;
+border-right:2px solid white; /* typewriter cursor */
 }
 
 .cta{
@@ -68,6 +65,16 @@ border-radius:6px;
 text-decoration:none;
 font-weight:600;
 display:inline-block;
+animation: pulse 4s ease-in-out infinite;
+}
+
+/* Pulse button animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* SECTIONS */
@@ -109,7 +116,7 @@ transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .box:hover{
-background:#f0f4fa; /* subtle light blue */
+background:#f0f4fa;
 transform: translateY(-4px);
 }
 
@@ -123,19 +130,28 @@ font-size:32px;
 margin-bottom:10px;
 }
 
-/* BLUE SECTION */
+/* FULL-WIDTH BLUE SECTION */
 
-.blue{
-background:#0b2a4a;
-color:white;
+.blue-section-fullwidth{
+  background:#0b2a4a;
+  color:white;
+  padding:80px 20px;
+  width:100%;
+  margin-left:0;
+  margin-right:0;
 }
 
-.blue .box{
-background:#143a63;
+.blue-section-fullwidth .grid{
+  max-width:1100px;
+  margin:auto;
 }
 
-.blue .box:hover{
-background:#1a4072; /* slightly lighter blue on hover */
+.blue-section-fullwidth .box{
+  background:#143a63;
+}
+
+.blue-section-fullwidth .box:hover{
+  background:#1a4072;
 }
 
 /* FORM */
@@ -200,7 +216,7 @@ line-height:1.6;
 
 <section class="hero">
 
-<h1>Florida Construction Lien Prepared by a Construction Attorney</h1>
+<h1 id="hero-title"></h1>
 
 <p>
 Ready Legal helps contractors and suppliers secure payment by preparing Florida construction liens that comply with Florida law.
@@ -246,7 +262,7 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 </section>
 
 
-<section class="section blue">
+<section class="blue-section-fullwidth">
 
 <h2>Common Situations Where Contractors File Liens</h2>
 
@@ -394,6 +410,22 @@ You should not rely upon any information contained on this page as a substitute 
 By submitting information through this page, you acknowledge that the firm may decline representation for any reason and that no legal services will be performed until a formal engagement agreement has been entered. The firm disclaims all liability for any reliance on the information provided prior to the execution of an engagement agreement. Clients are solely responsible for verifying deadlines, statutes, and all requirements applicable to their lien claims.
 
 </footer>
+
+<script>
+// TYPEWRITER EFFECT
+const text = "Florida Construction Lien Prepared by a Construction Attorney";
+const heroTitle = document.getElementById("hero-title");
+let i = 0;
+
+function typeWriter(){
+    if(i < text.length){
+        heroTitle.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+    }
+}
+window.onload = typeWriter;
+</script>
 
 </body>
 </html>
