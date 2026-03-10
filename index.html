@@ -21,25 +21,18 @@ line-height:1.7;
 
 header{
 background:#0b2a4a;
-color:white;
-padding:18px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-weight:700;
-font-size:20px;
+padding:20px;
+text-align:center;
 }
 
 .cta{
 background:#ff8c2a;
 color:white;
-padding:12px 22px;
+padding:14px 28px;
 border-radius:6px;
 text-decoration:none;
 font-weight:600;
+display:inline-block;
 }
 
 /* HERO */
@@ -55,26 +48,82 @@ text-align:center;
 font-size:42px;
 max-width:900px;
 margin:auto;
-margin-bottom:18px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:18px;
 max-width:700px;
 margin:auto;
-margin-bottom:30px;
 }
 
-.lead-form{
-background:white;
-padding:25px;
+/* SECTIONS */
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:70px 25px;
+}
+
+.section h2{
+font-size:34px;
+margin-bottom:20px;
+text-align:center;
+}
+
+/* IMAGE */
+
+.feature-image{
+width:100%;
 border-radius:8px;
-max-width:520px;
-margin:35px auto;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
+margin-top:35px;
 }
 
-/* INPUTS */
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+/* BOXES */
+
+.box{
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+text-align:center;
+}
+
+/* BLUE SECTION */
+
+.blue{
+background:#0b2a4a;
+color:white;
+}
+
+.blue .box{
+background:#143a63;
+color:white;
+}
+
+/* FORM */
+
+.form-wrapper{
+max-width:700px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:8px;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+form{
+text-align:left;
+}
 
 input, select, textarea{
 width:100%;
@@ -84,6 +133,7 @@ margin-bottom:16px;
 border:1px solid #ddd;
 border-radius:6px;
 font-size:14px;
+box-sizing:border-box;
 }
 
 button{
@@ -96,63 +146,6 @@ border-radius:6px;
 cursor:pointer;
 font-weight:600;
 width:100%;
-}
-
-/* SECTIONS */
-
-.section{
-max-width:1050px;
-margin:auto;
-padding:70px 20px;
-}
-
-.section h2{
-font-size:34px;
-margin-bottom:20px;
-text-align:center;
-}
-
-/* BENEFITS */
-
-.benefits{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.benefit{
-background:white;
-padding:25px;
-border-radius:8px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-/* PROCESS */
-
-.process{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:35px;
-margin-top:40px;
-}
-
-.step{
-background:white;
-padding:25px;
-border-radius:8px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-/* BLUE SECTION */
-
-.blue{
-background:#0b2a4a;
-color:white;
-}
-
-.blue h2{
-color:white;
 }
 
 /* FOOTER */
@@ -172,8 +165,6 @@ color:#666;
 
 <header>
 
-<div class="logo">Ready Legal</div>
-
 <a href="#form" class="cta">Start My Lien</a>
 
 </header>
@@ -184,45 +175,46 @@ color:#666;
 <h1>Florida Construction Lien Prepared by a Construction Attorney</h1>
 
 <p>
-Ready Legal helps contractors and suppliers secure payment by preparing Florida construction liens that comply with state law.
+Ready Legal helps contractors and suppliers secure payment by preparing Florida construction liens that comply with Florida law.
 </p>
-
-<div class="lead-form">
-
-<label>Project Property Address</label>
-<input type="text" placeholder="Enter the project address">
-
-<button>Start My Lien Request</button>
-
-</div>
 
 </section>
 
 
 <section class="section">
 
-<h2>Why Contractors Choose Ready Legal</h2>
+<h2>Construction Lien Preparation for Florida Contractors</h2>
 
-<div class="benefits">
+<img class="feature-image"
+src="https://beachportag.wordpress.com/wp-content/uploads/2023/06/josh-olalde-x1p1_ednnok-unsplash.jpg">
 
-<div class="benefit">
-<h3>Attorney Prepared Liens</h3>
-<p>Your lien is prepared by a construction attorney with experience representing contractors and suppliers.</p>
+</section>
+
+
+<section class="section">
+
+<h2>Why Contractors Choose Attorney-Prepared Liens</h2>
+
+<div class="grid">
+
+<div class="box">
+<h3>Avoid Costly Errors</h3>
+<p>Incorrect legal descriptions, owner names, or statutory language can invalidate a construction lien.</p>
 </div>
 
-<div class="benefit">
-<h3>Protect Your Lien Rights</h3>
-<p>Errors in a lien claim can jeopardize your ability to enforce payment.</p>
+<div class="box">
+<h3>Comply With Florida Law</h3>
+<p>Construction liens must comply with strict statutory requirements under Florida law.</p>
 </div>
 
-<div class="benefit">
-<h3>Flat Fee Pricing</h3>
-<p>Construction lien preparation is available on a flat fee basis.</p>
+<div class="box">
+<h3>Secure Payment</h3>
+<p>A properly prepared lien protects contractors and suppliers when payment disputes arise.</p>
 </div>
 
-<div class="benefit">
-<h3>Construction Industry Focus</h3>
-<p>The firm represents contractors, suppliers, developers, and subcontractors.</p>
+<div class="box">
+<h3>Flat Fee Service</h3>
+<p>Construction lien preparation is available for a predictable flat fee.</p>
 </div>
 
 </div>
@@ -234,15 +226,29 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 
 <h2>Common Situations Where Contractors File Liens</h2>
 
-<ul>
+<div class="grid">
 
-<li>Owner refuses to pay final invoice</li>
-<li>General contractor withholding payment</li>
-<li>Disputes over change orders</li>
-<li>Project terminated before completion</li>
-<li>Customer ignores repeated payment requests</li>
+<div class="box">
+Owner refuses to pay the final invoice
+</div>
 
-</ul>
+<div class="box">
+General contractor withholding payment
+</div>
+
+<div class="box">
+Disputes over change orders
+</div>
+
+<div class="box">
+Customer stops responding to payment requests
+</div>
+
+<div class="box">
+Project terminated before final payment
+</div>
+
+</div>
 
 </section>
 
@@ -251,20 +257,23 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 
 <h2>How the Process Works</h2>
 
-<div class="process">
+<img class="feature-image"
+src="https://beachportag.wordpress.com/wp-content/uploads/2023/06/c-dustin-91aqt9p4mo8-unsplash.jpg">
 
-<div class="step">
-<strong>1. Submit Your Project Information</strong>
+<div class="grid">
+
+<div class="box">
+<h3>1. Submit Project Information</h3>
 <p>Provide the project address, owner information, and work dates.</p>
 </div>
 
-<div class="step">
-<strong>2. Attorney Reviews and Prepares the Lien</strong>
-<p>Your construction lien is drafted based on Florida lien law requirements.</p>
+<div class="box">
+<h3>2. Attorney Prepares the Lien</h3>
+<p>Your construction lien is prepared based on the information you provide.</p>
 </div>
 
-<div class="step">
-<strong>3. Record and Serve the Lien</strong>
+<div class="box">
+<h3>3. Record and Serve the Lien</h3>
 <p>You receive instructions for recording the lien and serving the property owner.</p>
 </div>
 
@@ -273,11 +282,27 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 </section>
 
 
+<section class="section">
+
+<h2>Prepared by Ready Legal</h2>
+
+<img class="feature-image"
+src="https://beachportag.wordpress.com/wp-content/uploads/2024/12/professional-picture.png">
+
+<p style="text-align:center; max-width:700px; margin:30px auto;">
+Ready Legal is a Florida law firm serving contractors, subcontractors, suppliers, and construction professionals. The firm assists clients with payment disputes, construction liens, and lien enforcement matters.
+</p>
+
+</section>
+
+
 <section class="section" id="form">
 
 <h2>Request Your Construction Lien</h2>
 
-<div class="lead-form">
+<div class="form-wrapper">
+
+<form>
 
 <label>Name</label>
 <input type="text">
@@ -288,13 +313,28 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 <label>Phone</label>
 <input type="tel">
 
+<label>Company</label>
+<input type="text">
+
 <label>Project Address</label>
 <input type="text">
+
+<label>County</label>
+<input type="text">
+
+<label>Property Owner Name</label>
+<input type="text">
+
+<label>Contract Amount</label>
+<input type="number">
 
 <label>Amount Unpaid</label>
 <input type="number">
 
-<label>Last Date Work Was Performed</label>
+<label>First Date of Work</label>
+<input type="date">
+
+<label>Last Date of Work</label>
 <input type="date">
 
 <label>Was a Notice to Owner Served?</label>
@@ -304,7 +344,12 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 <option>Not Sure</option>
 </select>
 
-<button>Submit Lien Request</button>
+<label>Additional Project Information</label>
+<textarea rows="4"></textarea>
+
+<button type="submit">Submit Lien Request</button>
+
+</form>
 
 </div>
 
@@ -313,14 +358,11 @@ Ready Legal helps contractors and suppliers secure payment by preparing Florida 
 
 <footer>
 
-Ready Legal  
-Orlando, Florida  
-
-Construction Law | Business Law | Real Estate Litigation
+Ready Legal – Orlando, Florida
 
 <br><br>
 
-Information on this page is for informational purposes only and does not constitute legal advice.
+Information provided on this page is for informational purposes only and does not constitute legal advice.
 
 </footer>
 
