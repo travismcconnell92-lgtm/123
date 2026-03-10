@@ -31,16 +31,21 @@ text-decoration:none;
 font-weight:700;
 font-size:40px;
 letter-spacing:1px;
+transition: color 0.3s ease;
+}
+
+header a:hover{
+color:#ff8c2a; /* turn orange on hover */
 }
 
 /* HERO */
 
 .hero{
 background:
-linear-gradient(rgba(11,42,74,0.63), rgba(11,42,74,0.67)), /* 25% more transparent */
+linear-gradient(rgba(11,42,74,0.63), rgba(11,42,74,0.67)), /* more transparent */
 url("https://beachportag.wordpress.com/wp-content/uploads/2024/12/professional-picture.png");
 background-size:cover;
-background-position:top center; /* shift focus to top */
+background-position:top center; /* show more top */
 color:white;
 padding:120px 20px;
 text-align:center;
@@ -65,15 +70,13 @@ border-radius:6px;
 text-decoration:none;
 font-weight:600;
 display:inline-block;
-animation: pulse 4s ease-in-out infinite;
+animation: pulse 4s ease-in-out infinite; /* one pulse every 4s */
 }
 
 /* Pulse button animation */
 @keyframes pulse {
   0% { transform: scale(1); }
-  25% { transform: scale(1.05); }
-  50% { transform: scale(1); }
-  75% { transform: scale(1.05); }
+  50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
 
@@ -211,7 +214,7 @@ line-height:1.6;
 <body>
 
 <header>
-<a href="https://www.readylegal.net">READY LEGAL</a>
+<a href="https://www.readylegal.net" target="_blank">READY LEGAL</a>
 </header>
 
 <section class="hero">
