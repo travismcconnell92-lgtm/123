@@ -4,425 +4,865 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Florida Construction Lien Preparation | Ready Legal</title>
+<meta name="description" content="Ready Legal helps Florida contractors and suppliers secure payment by preparing construction liens that comply with Florida law.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
-background:#f4f6fb;
-color:#1a1a1a;
-line-height:1.7;
+:root {
+  --navy: #0b2a4a;
+  --navy-mid: #143a63;
+  --orange: #ff8c2a;
+  --orange-dark: #e67a1f;
+  --white: #ffffff;
+  --off-white: #f5f7fb;
+  --gray: #e4e8f0;
+  --text: #1a2332;
+  --text-light: #5a6478;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 /* HEADER */
-
-header{
-background:#0b2a4a;
-padding:30px;
-text-align:center;
+header {
+  background: var(--navy);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 68px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.25);
 }
 
-header a{
-color:white;
-text-decoration:none;
-font-weight:700;
-font-size:40px;
-letter-spacing:1px;
-transition: color 0.3s ease;
+.logo {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: color 0.3s;
 }
+.logo:hover { color: var(--orange); }
 
-header a:hover{
-color:#ff8c2a; /* turn orange on hover */
+nav { display: flex; gap: 28px; align-items: center; }
+nav a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
 }
+nav a:hover { color: white; }
+
+.nav-cta {
+  background: var(--orange);
+  color: white !important;
+  padding: 9px 20px;
+  border-radius: 3px;
+  font-weight: 600 !important;
+  transition: background 0.3s !important;
+}
+.nav-cta:hover { background: var(--orange-dark) !important; }
 
 /* HERO */
-
-.hero{
-background:
-linear-gradient(rgba(11,42,74,0.63), rgba(11,42,74,0.67)),
-url("https://beachportag.wordpress.com/wp-content/uploads/2024/12/professional-picture.png");
-background-size:cover;
-background-position:top center; /* show more top of image */
-color:white;
-padding:120px 20px;
-text-align:center;
-position:relative;
+.hero {
+  position: relative;
+  padding: 96px 48px;
+  background: var(--navy);
+  overflow: hidden;
 }
 
-.hero h1{
-font-size:36px;
-max-width:900px;
-margin:auto;
-margin-bottom:20px;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(11,42,74,0.96) 45%, rgba(11,42,74,0.65) 100%),
+    url("https://readylegal.net/wp-content/uploads/2025/05/mick-haupt-tyn3-cljx-a-unsplash.jpg");
+  background-size: cover;
+  background-position: center right;
 }
 
-.hero p{
-font-size:16px;
-max-width:650px;
-margin:auto;
-margin-bottom:30px;
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.cta{
-background:#ff8c2a;
-color:white;
-padding:14px 30px;
-border-radius:6px;
-text-decoration:none;
-font-weight:600;
-display:inline-block;
-animation: pulse 4s ease-in-out infinite;
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.1s;
 }
 
-/* Pulse button animation */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+.hero h1 {
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 58px);
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 740px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.25s;
 }
 
-/* SECTIONS */
-
-.section{
-max-width:1100px;
-margin:auto;
-padding:80px 30px;
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.85;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.4s;
 }
 
-.section h2{
-font-size:34px;
-margin-bottom:30px;
-text-align:center;
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.55s;
 }
 
-/* GRID */
+.btn-primary {
+  background: var(--orange);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
+/* TRUST BAR */
+.trust-bar {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--gray);
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* BOXES */
+.trust-item {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.trust-item span { color: var(--orange); font-size: 14px; }
 
-.box{
-background:white;
-padding:35px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-text-align:center;
-min-height:230px;
-display:flex;
-flex-direction:column;
-justify-content:flex-start;
-transition: background 0.3s ease, transform 0.2s ease;
+/* WARNING BANNER */
+.warning-banner {
+  background: #fff8f0;
+  border-top: 3px solid var(--orange);
+  border-bottom: 1px solid #fde8cc;
+  padding: 16px 48px;
 }
 
-.box:hover{
-background:#f0f4fa;
-transform: translateY(-4px);
+.warning-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
 
-.box h3{
-margin-bottom:12px;
-font-size:20px;
+.warning-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.warning-text { font-size: 13px; color: #7a4a00; line-height: 1.65; }
+.warning-text strong { font-weight: 700; color: #5a3400; }
+
+/* SECTION LABELS */
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 14px;
 }
 
-.icon{
-font-size:32px;
-margin-bottom:10px;
+.section-title {
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 16px;
 }
 
-/* FULL-WIDTH BLUE SECTION */
-
-.blue-section-fullwidth{
-  background:#0b2a4a;
-  color:white;
-  padding:80px 20px;
-  width:100%;
-  margin-left:0;
-  margin-right:0;
-  text-align:center;
+/* WHY SECTION */
+.why-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 48px;
 }
 
-.blue-section-fullwidth h2 {
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.why-card {
+  background: var(--off-white);
+  border: 1px solid var(--gray);
+  border-top: 3px solid var(--navy);
+  padding: 32px 24px;
+  border-radius: 2px;
+  transition: border-top-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.why-card.visible {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.why-card:hover {
+  border-top-color: var(--orange);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+.why-icon { font-size: 28px; margin-bottom: 16px; }
+
+.why-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* SITUATIONS SECTION */
+.situations-section {
+  background: var(--navy);
+  padding: 80px 48px;
+}
+
+.situations-inner { max-width: 1200px; margin: 0 auto; }
+
+.situations-inner .section-label { color: var(--orange); }
+.situations-inner .section-title { color: white; margin-bottom: 48px; }
+
+.situations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.situation-card {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-top: 2px solid var(--orange);
+  padding: 28px 24px;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.situation-card.visible {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.situation-icon { font-size: 28px; margin-bottom: 14px; }
+
+.situation-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.situation-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* HOW IT WORKS */
+.process-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 48px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  position: relative;
+}
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: calc(12.5% + 12px);
+  right: calc(12.5% + 12px);
+  height: 2px;
+  background: var(--gray);
+  z-index: 0;
+}
+
+.process-step {
   text-align: center;
-  margin-bottom: 30px;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(16px);
 }
 
-.blue-section-fullwidth .grid{
-  max-width:1100px;
-  margin:auto;
+.process-step.visible {
+  animation: fadeUp 0.6s ease forwards;
 }
 
-.blue-section-fullwidth .box{
-  background:#143a63;
+.step-num {
+  width: 72px;
+  height: 72px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  border: 3px solid var(--orange);
+  transition: background 0.3s;
 }
 
-.blue-section-fullwidth .box:hover{
-  background:#1a4072;
+.process-step:hover .step-num { background: var(--orange); }
+
+.process-step h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
-/* FORM */
-
-.form-wrapper{
-max-width:700px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+.process-step p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.7;
+  font-weight: 300;
 }
 
-form{
-text-align:left;
+/* FORM SECTION */
+.form-section {
+  background: var(--off-white);
+  border-top: 1px solid var(--gray);
+  padding: 80px 48px;
 }
 
-input, select, textarea{
-width:100%;
-padding:12px;
-margin-top:6px;
-margin-bottom:18px;
-border:1px solid #ddd;
-border-radius:6px;
-font-size:14px;
-box-sizing:border-box;
+.form-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
-button{
-background:#ff8c2a;
-border:none;
-color:white;
-padding:14px;
-font-size:16px;
-border-radius:6px;
-cursor:pointer;
-font-weight:600;
-width:100%;
+.form-left p {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 28px;
 }
+
+.cta-phone {
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--navy);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+.cta-phone:hover { color: var(--orange); }
+.cta-hours { font-size: 13px; color: var(--text-light); font-weight: 500; margin-bottom: 32px; }
+
+.what-you-need {
+  background: white;
+  border: 1px solid var(--gray);
+  border-left: 3px solid var(--orange);
+  padding: 24px;
+  border-radius: 2px;
+}
+
+.what-you-need h4 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.what-you-need ul { list-style: none; }
+.what-you-need li {
+  font-size: 13px;
+  color: var(--text-light);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--off-white);
+  display: flex;
+  gap: 10px;
+}
+.what-you-need li::before { content: '—'; color: var(--orange); flex-shrink: 0; font-weight: 700; }
+.what-you-need li:last-child { border-bottom: none; }
+
+.form-box {
+  background: white;
+  border: 1px solid var(--gray);
+  border-top: 3px solid var(--orange);
+  padding: 40px 36px;
+  border-radius: 3px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.form-box h3 {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+
+form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--gray);
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--off-white);
+  margin-bottom: 18px;
+  transition: border-color 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  background: white;
+}
+
+form textarea { resize: vertical; }
+
+form button {
+  background: var(--orange);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.3s;
+}
+form button:hover { background: var(--orange-dark); }
 
 /* FOOTER */
+footer { background: #07192c; padding: 56px 48px 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
 
-footer{
-text-align:center;
-padding:40px 20px;
-font-size:13px;
-color:#555;
-max-width:900px;
-margin:auto;
-line-height:1.6;
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 56px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 28px;
+}
+
+.footer-brand .logo { display: block; margin-bottom: 14px; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 280px; }
+
+.footer-col h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 18px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 9px; }
+.footer-col a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.3s; }
+.footer-col a:hover { color: var(--orange); }
+
+.footer-contact { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.9; }
+.footer-contact a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+.footer-contact a:hover { color: var(--orange); }
+
+.footer-bottom { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+.footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.2); line-height: 1.75; max-width: 680px; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); white-space: nowrap; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  nav { display: none; }
+  header { padding: 0 24px; }
+  .hero { padding: 60px 24px; }
+  .trust-bar { padding: 14px 24px; gap: 20px; }
+  .warning-banner { padding: 16px 24px; }
+  .why-section, .process-section { padding: 56px 24px; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .situations-section { padding: 56px 24px; }
+  .situations-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .process-grid::before { display: none; }
+  .form-section { padding: 56px 24px; }
+  .form-inner { grid-template-columns: 1fr; gap: 48px; }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  footer { padding: 48px 24px 24px; }
+}
+
+@media (max-width: 600px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .situations-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
 }
 
 </style>
-
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
-<a href="https://home.readylegal.net">READY LEGAL</a>
+  <a href="https://home.readylegal.net" class="logo">READY LEGAL</a>
+  <nav>
+    <a href="https://counsel.readylegal.net">Counsel</a>
+    <a href="https://practices.readylegal.net">Practice Areas</a>
+    <a href="https://readylegal.net/pricing/">Pricing</a>
+    <a href="https://readylegal.net/about/">About</a>
+    <a href="https://readylegal.net/articles/">Blog</a>
+    <a href="#form" class="nav-cta">Start My Lien</a>
+  </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-
-<h1>Florida Construction Lien Prepared by a Construction Attorney</h1>
-
-<p>
-Ready Legal helps contractors and suppliers secure payment by preparing Florida construction liens that comply with Florida law.
-</p>
-
-<a href="#form" class="cta">Start My Lien</a>
-
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Florida Construction Law &mdash; Lien Preparation</p>
+    <h1>Florida Construction Lien Prepared by a Construction Attorney</h1>
+    <p class="hero-sub">Ready Legal helps contractors and suppliers secure payment by preparing Florida construction liens that comply with Florida law.</p>
+    <div class="hero-buttons">
+      <a href="#form" class="btn-primary">Start My Lien &rarr;</a>
+    </div>
+  </div>
 </section>
 
-
-<section class="section">
-
-<h2>Why Contractors Use Attorney-Prepared Liens</h2>
-
-<div class="grid">
-
-<div class="box">
-<div class="icon">✔</div>
-<h3>Avoid Costly Errors in Liens</h3>
-<p>Incorrect legal descriptions, owner information, or statutory language can invalidate your lien.</p>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-item"><span>★</span> Best Lawyers® Recognized</span>
+  <span class="trust-item"><span>★</span> Super Lawyers® Recognized</span>
+  <span class="trust-item"><span>★</span> Veteran Owned</span>
+  <span class="trust-item"><span>★</span> Florida Statewide</span>
+  <span class="trust-item"><span>★</span> Construction Law Focus</span>
 </div>
 
-<div class="box">
-<div class="icon">✔</div>
-<h3>Comply Fully With Florida Law</h3>
-<p>All construction liens are drafted to satisfy strict Florida statutory requirements.</p>
+<!-- WARNING BANNER -->
+<div class="warning-banner">
+  <div class="warning-inner">
+    <span class="warning-icon">&#9888;</span>
+    <p class="warning-text"><strong>Time-Sensitive:</strong> Florida construction liens must be recorded within 90 days of your last date of furnishing labor, materials, or services. Missing this deadline permanently extinguishes your lien rights. <strong>Do not delay.</strong></p>
+  </div>
 </div>
 
-<div class="box">
-<div class="icon">✔</div>
-<h3>Protect Your Payment Rights</h3>
-<p>A properly prepared lien ensures your ability to enforce payment in case of disputes.</p>
-</div>
-
-<div class="box">
-<div class="icon">✔</div>
-<h3>Flat Fee Lien Preparation</h3>
-<p>Predictable pricing makes construction lien preparation simple and affordable.</p>
-</div>
-
-</div>
-
+<!-- WHY SECTION -->
+<section class="why-section">
+  <p class="section-label">Why It Matters</p>
+  <h2 class="section-title">Why Contractors Use Attorney-Prepared Liens</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">✔</div>
+      <h3>Avoid Costly Errors</h3>
+      <p>Incorrect legal descriptions, owner information, or statutory language can invalidate your lien entirely.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <h3>Comply With Florida Law</h3>
+      <p>All construction liens are drafted to satisfy strict Florida statutory requirements under Chapter 713.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔒</div>
+      <h3>Protect Your Payment Rights</h3>
+      <p>A properly prepared lien ensures your ability to enforce payment if a dispute reaches the courts.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💲</div>
+      <h3>Flat Fee Preparation</h3>
+      <p>Predictable pricing makes construction lien preparation simple and accessible for contractors of all sizes.</p>
+    </div>
+  </div>
 </section>
 
-
-<section class="blue-section-fullwidth">
-
-<h2>Common Situations Where Contractors File Liens</h2>
-
-<div class="grid">
-
-<div class="box">
-<div class="icon">💰</div>
-<h3>Unpaid Invoice by Owner</h3>
-<p>The property owner refuses to pay the final invoice despite completed work.</p>
-</div>
-
-<div class="box">
-<div class="icon">⚖</div>
-<h3>Dispute Over Payment</h3>
-<p>The property owner or general contractor contests the amount owed for work performed.</p>
-</div>
-
-<div class="box">
-<div class="icon">📄</div>
-<h3>Change Order Conflicts</h3>
-<p>Disagreements arise over additional work or modifications to the contract.</p>
-</div>
-
-<div class="box">
-<div class="icon">⏳</div>
-<h3>Delayed or Withheld Payment</h3>
-<p>The property owner repeatedly delays payment even after multiple requests.</p>
-</div>
-
-</div>
-
+<!-- SITUATIONS SECTION -->
+<section class="situations-section">
+  <div class="situations-inner">
+    <p class="section-label">Common Scenarios</p>
+    <h2 class="section-title">Common Situations Where Contractors File Liens</h2>
+    <div class="situations-grid">
+      <div class="situation-card">
+        <div class="situation-icon">💰</div>
+        <h3>Unpaid Invoice by Owner</h3>
+        <p>The property owner refuses to pay the final invoice despite completed work.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-icon">⚖️</div>
+        <h3>Dispute Over Payment</h3>
+        <p>The owner or general contractor contests the amount owed for work performed.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-icon">📄</div>
+        <h3>Change Order Conflicts</h3>
+        <p>Disagreements arise over additional work or modifications to the original contract.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-icon">⏳</div>
+        <h3>Delayed or Withheld Payment</h3>
+        <p>The property owner repeatedly delays payment even after multiple requests.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<section class="section">
-
-<h2>How the Process Works</h2>
-
-<div class="grid">
-
-<div class="box">
-<div class="icon">1️⃣</div>
-<h3>Submit Project Information</h3>
-<p>Provide details about the property, owner, and work performed to start the process.</p>
-</div>
-
-<div class="box">
-<div class="icon">2️⃣</div>
-<h3>Client Engagement</h3>
-<p>Review and complete the engagement agreement to authorize Ready Legal to prepare your lien.</p>
-</div>
-
-<div class="box">
-<div class="icon">3️⃣</div>
-<h3>Attorney Prepares the Lien</h3>
-<p>Your lien is drafted accurately to comply with Florida law and protect your payment rights.</p>
-</div>
-
-<div class="box">
-<div class="icon">4️⃣</div>
-<h3>Client Records and Serves Lien</h3>
-<p>Receive clear instructions for recording and properly serving the lien to the property owner.</p>
-</div>
-
-</div>
-
+<!-- HOW IT WORKS -->
+<section class="process-section">
+  <p class="section-label">The Process</p>
+  <h2 class="section-title">How It Works</h2>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <h3>Submit Project Info</h3>
+      <p>Provide details about the property, owner, and work performed using the form below.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <h3>Client Engagement</h3>
+      <p>Review and sign the engagement agreement to authorize Ready Legal to prepare your lien.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <h3>Attorney Prepares Lien</h3>
+      <p>Your lien is drafted accurately to comply with Florida law and protect your payment rights.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <h3>Client Records Lien</h3>
+      <p>Receive clear instructions for recording and serving the lien on the property owner.</p>
+    </div>
+  </div>
 </section>
 
+<!-- FORM SECTION -->
+<section class="form-section" id="form">
+  <div class="form-inner">
 
-<section class="section" id="form">
+    <div class="form-left">
+      <p class="section-label">Get Started</p>
+      <h2 class="section-title">Request Your Construction Lien</h2>
+      <p>Complete the form with your project details and our team will follow up promptly. You can also reach us directly by phone.</p>
+      <a href="tel:4072582002" class="cta-phone">407.258.2002</a>
+      <p class="cta-hours">Monday &ndash; Friday &nbsp;|&nbsp; 9:00 AM &ndash; 5:00 PM</p>
 
-<h2>Request Your Construction Lien</h2>
+      <div class="what-you-need">
+        <h4>Information You'll Need</h4>
+        <ul>
+          <li>Project address and county</li>
+          <li>Property owner name</li>
+          <li>Value of work provided</li>
+          <li>Amount unpaid</li>
+          <li>First and last date of work</li>
+          <li>Notice to Owner date (if served)</li>
+        </ul>
+      </div>
+    </div>
 
-<div class="form-wrapper">
+    <div class="form-box">
+      <h3>Lien Request Form</h3>
+      <form action="https://formspree.io/f/meeravaa" method="POST">
 
-<form action="https://formspree.io/f/meeravaa" method="POST">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Jane Smith" required>
 
-<label>Name</label>
-<input type="text" name="name" required>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="jane@example.com" required>
 
-<label>Email</label>
-<input type="email" name="email" required>
+        <label>Company</label>
+        <input type="text" name="company" placeholder="Smith Contracting LLC">
 
-<label>Company</label>
-<input type="text" name="company">
+        <label>Project Address</label>
+        <input type="text" name="project_address" placeholder="123 Main St, Orlando, FL" required>
 
-<label>Project Address</label>
-<input type="text" name="project_address" required>
+        <label>County</label>
+        <input type="text" name="county" placeholder="Orange">
 
-<label>County</label>
-<input type="text" name="county">
+        <label>Property Owner Name</label>
+        <input type="text" name="property_owner" placeholder="Property Owner or Entity Name">
 
-<label>Property Owner Name</label>
-<input type="text" name="property_owner">
+        <label>Value of Work Provided ($)</label>
+        <input type="number" name="value_work" placeholder="0.00">
 
-<label>Value of Work Provided</label>
-<input type="number" name="value_work">
+        <label>Amount Unpaid ($)</label>
+        <input type="number" name="amount_unpaid" placeholder="0.00">
 
-<label>Amount Unpaid</label>
-<input type="number" name="amount_unpaid">
+        <label>First Date of Work</label>
+        <input type="date" name="first_date_work">
 
-<label>First Date of Work</label>
-<input type="date" name="first_date_work">
+        <label>Last Date of Work</label>
+        <input type="date" name="last_date_work">
 
-<label>Last Date of Work</label>
-<input type="date" name="last_date_work">
+        <label>Date Notice to Owner Was Served (if applicable)</label>
+        <input type="date" name="notice_date">
 
-<label>What Date Was the Notice to Owner Served?</label>
-<input type="date" name="notice_date">
+        <label>Additional Project Information</label>
+        <textarea rows="4" name="additional_info" placeholder="Any other relevant details about the project or dispute..."></textarea>
 
-<label>Additional Project Information</label>
-<textarea rows="4" name="additional_info"></textarea>
+        <button type="submit">Submit Lien Request &rarr;</button>
+      </form>
+    </div>
 
-<button type="submit">Submit Lien Request</button>
-
-</form>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- FOOTER -->
 <footer>
-
-<strong>READY LEGAL</strong>
-
-<br><br>
-
-924 N Magnolia Ave STE 202, #1178  
-Orlando, FL 32803  
-
-<br>
-admin@readylegal.net
-
-<br><br>
-
-The information provided on this page is for general informational purposes only and does not constitute legal advice. Nothing on this page should be interpreted as an offer, solicitation, or agreement to provide legal services. Submission of information through this website does not create an attorney-client relationship between you and Ready Legal or any of its attorneys.
-
-No attorney-client relationship is formed unless and until a written engagement agreement has been executed by both the client and the firm. Until such time, any information submitted through this page may not be treated as confidential or privileged.
-
-Legal services offered by Ready Legal through this page are limited to matters involving real property located within the State of Florida. Laws governing construction liens vary by jurisdiction, and this page is not intended to provide guidance regarding lien rights or procedures outside the State of Florida.
-
-You should not rely upon any information contained on this page as a substitute for obtaining legal advice from a qualified attorney regarding your specific situation. The firm makes no representations or warranties regarding the completeness, accuracy, or applicability of the information presented.
-
-By submitting information through this page, you acknowledge that the firm may decline representation for any reason and that no legal services will be performed until a formal engagement agreement has been entered. The firm disclaims all liability for any reliance on the information provided prior to the execution of an engagement agreement. Clients are solely responsible for verifying deadlines, statutes, and all requirements applicable to their lien claims.
-
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="https://home.readylegal.net" class="logo">READY LEGAL</a>
+        <p>Prompt, capable, and effective legal representation for Orlando's small business community. Construction law, business law, and litigation throughout Florida.</p>
+        <br>
+        <p style="font-size:11px; color:rgba(255,255,255,0.22);">Ready Legal is the operating name of Travis McConnell, PLLC.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="https://counsel.readylegal.net">Counsel</a></li>
+          <li><a href="https://practices.readylegal.net">Practice Areas</a></li>
+          <li><a href="https://readylegal.net/pricing/">Pricing</a></li>
+          <li><a href="https://readylegal.net/about/">About</a></li>
+          <li><a href="https://readylegal.net/articles/">Blog</a></li>
+          <li><a href="#form">Start My Lien</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          924 N. Magnolia Avenue<br>
+          Suite 202, #1178<br>
+          Orlando, FL 32803<br>
+          <span style="font-size:11px; color:rgba(255,255,255,0.25);">*Postbox &mdash; mailing only</span>
+          <br><br>
+          <a href="tel:4072582002">(407) 258-2002</a><br>
+          <a href="mailto:admin@readylegal.net">admin@readylegal.net</a><br>
+          <a href="https://home.readylegal.net">www.readylegal.net</a>
+          <br><br>
+          Veteran Owned &#127482;&#127480;
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">The information on this page is for general informational purposes only and does not constitute legal advice. Nothing on this page should be interpreted as an offer, solicitation, or agreement to provide legal services. Submission of information through this form does not create an attorney-client relationship. No attorney-client relationship is formed until a written engagement agreement has been executed by both parties. Legal services are limited to matters involving real property in the State of Florida.</p>
+      <p class="footer-copy">&copy; 2025 Ready Legal</p>
+    </div>
+  </div>
 </footer>
+
+<script>
+// Scroll-triggered fade-in for cards
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var el = entry.target;
+      var siblings = el.parentElement.querySelectorAll('.why-card, .situation-card, .process-step');
+      var index = Array.prototype.indexOf.call(siblings, el);
+      el.style.animationDelay = (index * 0.1) + 's';
+      el.classList.add('visible');
+      observer.unobserve(el);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.why-card, .situation-card, .process-step').forEach(function(el) {
+  observer.observe(el);
+});
+</script>
 
 </body>
 </html>
